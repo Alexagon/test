@@ -45,13 +45,13 @@ void Zavd()
 			return;
 		}
 	system("cls");
-	// Вывод таблицы
+	// Г‚Г»ГўГ®Г¤ ГІГ ГЎГ«ГЁГ¶Г»
 	cout << "-------------\nLaboratorna 3\n-------------\n";
 	cout << "\n\nTablicya:\n\n" << setw(6) << "xi" << setw(11) << "f(xi)\n\n";
 	for (int i = 0; i <= 3; i++)
 		cout << setw(6) << xi[i] << setw(8) << fxi[i] << endl;
 	cout << endl;
-	// Расчет коефициентов ур. Лагранжа
+	// ГђГ Г±Г·ГҐГІ ГЄГ®ГҐГґГЁГ¶ГЁГҐГ­ГІГ®Гў ГіГ°. Г‹Г ГЈГ°Г Г­Г¦Г 
 	double a = 0;
 	double bcd[3];
 	double L[] = { 0, 0, 0, 0 };
@@ -74,7 +74,7 @@ void Zavd()
 		L[2] = L[2] + a * (bcd[0] * bcd[1] + bcd[1] * bcd[2] + bcd[0] * bcd[2]);
 		L[3] = L[3] - a * (bcd[0] * bcd[1] * bcd[2]);
 	}
-	// Вывод ур. Лагранжа
+	// Г‚Г»ГўГ®Г¤ ГіГ°. Г‹Г ГЈГ°Г Г­Г¦Г 
 	cout << "Rivnyannya Lagranja:\nL3(xi) =";
 	if (L[0] == -1)
 		cout << " - x^3";
@@ -140,7 +140,7 @@ void Zavd()
 				cout << " + " << L[3] << endl << endl;
 			else if ((L[0] == 0) && (L[1] == 0) && (L[2] == 0))
 				cout << L[3] << endl << endl;
-	// Подставлять ли 4 числа в уравнение?
+	// ГЏГ®Г¤Г±ГІГ ГўГ«ГїГІГј Г«ГЁ 4 Г·ГЁГ±Г«Г  Гў ГіГ°Г ГўГ­ГҐГ­ГЁГҐ?
 	cout << "Hochete pidstaviti 4 chisla do rivnyannya? (y/n) ";
 	char q1;
 	cin >> q1;
@@ -193,10 +193,10 @@ void Zavd()
 			system("pause");
 			return;
 		}
-	Lx0 = pow(x0, 3) + L[1]*pow(x0, 2) + L[2]*x0 + L[3];
-	Lx1 = pow(x1, 3) + L[1]*pow(x1, 2) + L[2]*x1 + L[3];
-	Lx2 = pow(x2, 3) + L[1]*pow(x2, 2) + L[2]*x2 + L[3];
-	Lx3 = pow(x3, 3) + L[1]*pow(x3, 2) + L[2]*x3 + L[3];
+	Lx0 = L[0]*pow(x0, 3) + L[1]*pow(x0, 2) + L[2]*x0 + L[3];
+	Lx1 = L[0]*pow(x1, 3) + L[1]*pow(x1, 2) + L[2]*x1 + L[3];
+	Lx2 = L[0]*pow(x2, 3) + L[1]*pow(x2, 2) + L[2]*x2 + L[3];
+	Lx3 = L[0]*pow(x3, 3) + L[1]*pow(x3, 2) + L[2]*x3 + L[3];
 	cout << "\nL3(" << x0 << ") = " << Lx0 << endl;
 	cout << "L3(" << x1 << ") = " << Lx1 << endl;
 	cout << "L3(" << x2 << ") = " << Lx2 << endl;
